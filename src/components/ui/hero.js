@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import BigButton from './big-button'
 export default function Hero({
   heroTitle,

@@ -1,12 +1,12 @@
 import React from 'react'
 import Container from '../components/layout/container'
 import Layout from '../components/layout/layout'
-import SEO from '../components/seo/seo'
+import Seo from '../components/seo/seo'
 
 const Hizmetler = () => {
   return (
     <Layout>
-      <SEO
+      <Seo
         title='Hizmetler'
         description='hizmetler açıklaması'
         image='/test.jpg'
