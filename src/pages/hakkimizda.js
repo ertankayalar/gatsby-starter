@@ -5,13 +5,10 @@ import Seo from '../components/seo/seo'
 import BigButton from '../components/ui/big-button'
 import Content from '../components/ui/content'
 import PageHeader from '../components/ui/page-header'
-import { graphql } from 'gatsby'
-// import Img from 'gatsby-plugin-image'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
 import { StaticImage } from 'gatsby-plugin-image'
 
-const Hakkimizda = ({ data }) => {
-  console.log(`data.logo`, data.logo)
+const Hakkimizda = () => {
   return (
     <Layout>
       <Seo
@@ -50,48 +47,10 @@ const Hakkimizda = ({ data }) => {
           örnek içerik
           <h2>Örnek Alt başlık</h2>
           <p>örnek içerik</p>
-          {/* <Img fluid={data.file.childImageSharp.fluid} alt='ertan kayalar' /> */}
-          {/* <img src={getImage(data.mainImage)} alt='test' /> */}
-          <GatsbyImage image={getImage(data.mainImage)} alt={`test`} />
-          <GatsbyImage
-            image={getImage(data.logo)}
-            alt={`test`}
-            // width={data.logo.childImageSharp.width}
-            // height={data.logo.childImageSharp.height}
-          />
-          {/* <Img
-            fluid={data.logo2.childImageSharp.fluid}
-            alt='A corgi smiling happily'
-          /> */}
         </Content>
       </Container>
     </Layout>
   )
 }
-export const query = graphql`
-  query MyQuery {
-    mainImage: file(relativePath: { regex: "/logo-2020-medium.jpg/" }) {
-      childImageSharp {
-        gatsbyImageData(quality: 80, transformOptions: {}, layout: CONSTRAINED)
-      }
-    }
-    logo: file(relativePath: { regex: "/ek-logo-2020.png/" }) {
-      childImageSharp {
-        gatsbyImageData(
-          quality: 80
-          width: 280
-          transformOptions: {}
-          layout: CONSTRAINED
-        )
-      }
-    }
-    logo2: file(relativePath: { regex: "/ek-logo-2020.png/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
+
 export default Hakkimizda
