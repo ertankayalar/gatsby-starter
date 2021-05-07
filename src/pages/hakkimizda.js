@@ -8,7 +8,7 @@ import PageHeader from '../components/ui/page-header'
 import { graphql } from 'gatsby'
 // import Img from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Hakkimizda = ({ data }) => {
   console.log(`data.logo`, data.logo)
@@ -25,6 +25,28 @@ const Hakkimizda = ({ data }) => {
         <h1 className='text-green-600'>Hakkımızda</h1>
 
         <Content>
+          <div className='w-full p-5'>
+            <StaticImage
+              src='../images/logo-2020-medium.jpg'
+              alt='ek logo'
+              layout='fixed'
+              width={500}
+              height={570}
+            />
+          </div>
+          <div className='w-full p-0 h-28 bg-gray-100'>
+            <StaticImage
+              src='../images/ek-logo-2020.png'
+              alt='ek logo'
+              layout='constrained'
+              width={280}
+              height={100}
+              css={`
+                border: 4px green dashed;
+                padding: 10px;
+              `}
+            />
+          </div>
           örnek içerik
           <h2>Örnek Alt başlık</h2>
           <p>örnek içerik</p>
@@ -37,13 +59,11 @@ const Hakkimizda = ({ data }) => {
             // width={data.logo.childImageSharp.width}
             // height={data.logo.childImageSharp.height}
           />
-          <Img
+          {/* <Img
             fluid={data.logo2.childImageSharp.fluid}
             alt='A corgi smiling happily'
-          />
-          <img src='/images/ek-logo-2020.png' alt='ek logo' />
+          /> */}
         </Content>
-        <BigButton to='/'>Ana Sayfa</BigButton>
       </Container>
     </Layout>
   )
