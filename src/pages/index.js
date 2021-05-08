@@ -14,6 +14,7 @@ const IndexPage = () => {
           buttonLink='/iletisim/'
           buttonText='Bize Ulaşın'
         />
+
         <Container>
           <h1 className='text-xl text-indigo-600'>Congratulations</h1>
           <p className='text-lg font-semibold'>tailwindcss setup completed</p>

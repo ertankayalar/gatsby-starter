@@ -7,8 +7,10 @@ module.exports = {
     url: 'https://example.com', // No trailing slash allowed!
     image: '/images/sample.jpg', // Path to your image you placed in the 'static' folder
     twitterUsername: '@erkasoft',
+    siteUrl: `https://www.example.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     {
@@ -18,7 +20,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
