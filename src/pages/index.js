@@ -1,12 +1,18 @@
 import * as React from 'react'
-import Container from '../components/layout/container'
-import Layout from '../components/layout/layout'
-import Hero from '../components/ui/hero'
+import Container from '@components/Container'
+import Layout from '@layouts/main'
+import Hero from '@components/ui/hero'
+import Seo from '@components/Seo'
 
 // markup
 const IndexPage = () => {
   return (
     <Layout>
+      <Seo
+        title='Ana Sayfa'
+        description='Ana sayfa açıklama'
+        image='/test.jpg'
+      />
       <div className='bg-gray-100'>
         <Hero
           heroTitle='Hoşgeldiniz'

@@ -1,7 +1,7 @@
 import React from 'react'
-import Container from '../components/layout/container'
-import Seo from '../components/seo/seo'
-import Layout from '../components/layout/layout'
+import Container from '@components/Container'
+import Seo from '@components/Seo'
+import Layout from '@layouts/main'
 const Iletisim = () => {
   return (
     <Layout>

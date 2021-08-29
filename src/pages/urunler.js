@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/layout/layout'
-import Container from '../components/layout/container'
+import Layout from '@layouts/main'
+import Container from '@components/Container'
 
 export default function Products() {
   return (

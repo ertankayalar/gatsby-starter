@@ -1,14 +1,14 @@
 import React from 'react'
-import Container from '../components/layout/container'
-import Layout from '../components/layout/layout'
-import Seo from '../components/seo/seo'
-import Slider from '../components/ui/slider'
+import Container from '@components/Container'
+import MainLayout from '@layouts/main'
+import Seo from '@components/Seo'
+import Slider from '@components/ui/slider'
 import { SwiperSlide } from 'swiper/react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Hizmetler = () => {
   return (
-    <Layout>
+    <MainLayout>
       <Seo
         title='Hizmetler'
         description='hizmetler açıklaması'
@@ -34,7 +34,7 @@ const Hizmetler = () => {
           <SwiperSlide>Slide 4</SwiperSlide>
         </Slider>
       </Container>
-    </Layout>
+    </MainLayout>
   )
 }
 

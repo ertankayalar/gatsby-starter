@@ -8,12 +8,17 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 // Import Swiper styles
-require('swiper/swiper.scss')
-require('swiper/components/navigation/navigation.scss')
-require('swiper/components/pagination/pagination.scss')
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // install Swiper modules
 SwiperCore.use([Navigation, Autoplay, Pagination])
+// new Swiper('.my-swiper', {
+//   // pass modules here
+//   modules: [Navigation, Autoplay, Pagination],
+//   // ...
+// })
 
 const Slider = ({ children }) => {
   return (

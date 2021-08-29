@@ -1,6 +1,6 @@
 import React from 'react'
-import Container from '../components/layout/container'
-import Layout from '../components/layout/layout'
+import Container from '@components/Container'
+import Layout from '@layouts/main'
 import { StaticImage } from 'gatsby-plugin-image'
 
 // import Swiper core and required modules
@@ -10,12 +10,18 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 // Import Swiper styles
-require('swiper/swiper.scss')
-require('swiper/components/navigation/navigation.scss')
-require('swiper/components/pagination/pagination.scss')
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // install Swiper modules
 SwiperCore.use([Navigation, Autoplay, Pagination])
+
+// new Swiper('.my-swiper', {
+//   // pass modules here
+//   modules: [Navigation, Autoplay, Pagination],
+//   // ...
+// })
 
 const Slide = () => {
   return (

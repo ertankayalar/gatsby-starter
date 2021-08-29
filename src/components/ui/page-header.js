@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Container from '../layout/container'
+import Container from '@components/Container'
 
 const PageHeader = ({ title, description }) => {
   return (
-    <div className='w-full bg-gray-200 text-gray-700'>
+    <div className='w-full text-gray-700 bg-gray-200'>
       <Container className='py-20 mb-5'>
-        <h1 className='text-6xl font-semibold mb-3'>{title}</h1>
+        <h1 className='mb-3 text-6xl font-semibold'>{title}</h1>
         <p className='text-sm'>{description}</p>
       </Container>
     </div>

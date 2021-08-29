@@ -1,13 +1,19 @@
 import React from 'react'
-import Container from '../components/layout/container'
-import Layout from '../components/layout/layout'
-import Seo from '../components/seo/seo'
-import Content from '../components/ui/content'
-import PageHeader from '../components/ui/page-header'
-import Cta from '../components/ui/cta'
+import Container from '@components/Container'
+import Layout from '@layouts/main'
+import Seo from '@components/Seo'
+import Content from '@components/Content'
+import PageHeader from '@components/ui/page-header'
+import Cta from '@components/ui/cta'
 import { StaticImage } from 'gatsby-plugin-image'
+import Breadcrumbs from '@components/Breadcrumbs'
+import { BreadcrumbItem } from '@utils/Navigation'
 
 const Hakkimizda = () => {
+  const breadcrumbs = [
+    BreadcrumbItem('', 'Ana Sayfa'),
+    BreadcrumbItem(`hakkimizda/`, `Hakkımızda`),
+  ]
   return (
     <Layout>
       <Seo
@@ -17,6 +23,9 @@ const Hakkimizda = () => {
         article
       />
       <PageHeader title='Hakkımızda' description='profesyonel hizmetler' />
+      <div className='w-full mx-auto md:max-w-2xl'>
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
       <Container addClass='py-10'>
         <h1 className='text-green-600'>Hakkımızda</h1>
 

@@ -1,2 +1,2 @@
 import './src/css/index.css'
-import './src/css/index.scss'
+import '@sass/index.scss'

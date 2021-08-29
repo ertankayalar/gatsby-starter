@@ -1,10 +1,24 @@
 import React, { useRef } from 'react'
-import MenuIcon from '../ui/menu-icon'
-import { MAIN_MENU } from '../../lib/constants'
-import { Link } from 'gatsby'
-import TopMenu from '../ui/top-menu'
+import MenuIcon from './svg/MenuIcon'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import TopMenu from './TopMenu'
 
 const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query siteMainMenuQuery {
+      site {
+        siteMetadata {
+          mainMenu {
+            href
+            label
+          }
+        }
+      }
+    }
+  `)
+
+  const { mainMenu } = data.site.siteMetadata
+
   const menu = useRef(null)
 
   const clickHandler = () => {
@@ -21,16 +35,16 @@ const Header = ({ siteTitle }) => {
   }
   return (
     <header className='w-full bg-white'>
-      <section className=' mx-auto max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-lg flex flex-wrap w-full '>
-        <div className='w-full md:w-1/3 flex justify-center items-center md:justify-start py-5  md:pl-2 '>
-          <span className='text-lg  mx-auto lg:ml-0'>
+      <section className='flex flex-wrap w-full max-w-screen-sm mx-auto md:max-w-screen-sm lg:max-w-screen-lg'>
+        <div className='flex items-center justify-center w-full py-5 md:w-1/3 md:justify-start md:pl-2 '>
+          <span className='mx-auto text-lg lg:ml-0'>
             <Link href='/'>
               <img src='/images/ek-logo-2020.png' alt={siteTitle} />
             </Link>
           </span>
 
           <div
-            className='px-4 cursor-pointer md:hidden text-gray-600 right-0'
+            className='right-0 px-4 text-gray-600 cursor-pointer md:hidden'
             id='burger'
             onClick={clickHandler}
           >
@@ -39,10 +53,10 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <div
-          className='w-full md:w-2/3 h-auto  md:pr-2 lg:flex flex-wrap hidden   items-center justify-end text-primary-700 text-sm'
+          className='flex-wrap items-center justify-end hidden w-full h-auto text-sm md:w-2/3 md:pr-2 lg:flex text-primary-700'
           ref={menu}
         >
-          <TopMenu menuItems={MAIN_MENU} />
+          <TopMenu menuItems={mainMenu} />
         </div>
       </section>
       {/* <section className='border-bottom' id='menu'>

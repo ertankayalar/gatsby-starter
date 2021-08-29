@@ -1,11 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Footer from './footer'
-import Header from './header'
-const Layout = ({ children }) => {
+import Footer from '@components/Footer'
+import Header from '@components/Header'
+
+const Main = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteTitleMainLayoutQuery {
       site {
         siteMetadata {
           title
@@ -23,4 +24,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default Main
